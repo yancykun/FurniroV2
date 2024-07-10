@@ -21,43 +21,43 @@ export const navigationLinks = [
     },
 ];
 
-// export const categories = [
-//   {
-//     id: "0",
-//     title: "Dining room",
-//     image: dining,
-//     category: "dining",
-//     url: "/categories/dining",
-//   },
-//   {
-//     id: "1",
-//     title: "Living room",
-//     image: living,
-//     category: "living",
-//     url: "/categories/living",
-//   },
-//   {
-//     id: "2",
-//     title: "Bedroom",
-//     image: bedroom,
-//     category: "bedroom",
-//     url: "/categories/bedroom",
-//   },
-//   {
-//     id: "3",
-//     title: "Kitchen",
-//     image: kitchen,
-//     category: "kitchen",
-//     url: "/categories/kitchen",
-//   },
-//   {
-//     id: "4",
-//     title: "Workplace",
-//     image: workplace,
-//     category: "workplace",
-//     url: "/categories/workplace",
-//   },
-// ];
+export const categories = [
+    {
+        id: '0',
+        title: 'Dining room',
+        image: '/assets/images/dining.jpg',
+        category: 'dining',
+        url: '/categories/dining',
+    },
+    {
+        id: '1',
+        title: 'Living room',
+        image: '/assets/images/living.jpg',
+        category: 'living',
+        url: '/categories/living',
+    },
+    {
+        id: '2',
+        title: 'Bedroom',
+        image: '/assets/images/bedroom.jpg',
+        category: 'bedroom',
+        url: '/categories/bedroom',
+    },
+    {
+        id: '3',
+        title: 'Kitchen',
+        image: '/assets/images/kitchen.jpg',
+        category: 'kitchen',
+        url: '/categories/kitchen',
+    },
+    {
+        id: '4',
+        title: 'Workplace',
+        image: '/assets/images/workplace.jpg',
+        category: 'workplace',
+        url: '/categories/workplace',
+    },
+];
 
 // export const inspiration = [
 //   {

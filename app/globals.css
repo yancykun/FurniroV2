@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    scroll-behavior: smooth;
-}
-
 @layer components {
     .button {
         @apply text-base font-bold tracking-wider;

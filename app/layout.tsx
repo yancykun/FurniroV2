@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import Layout from '@/components/Layout/Layout';
+import TanstackQueryClientProvider from '@/components/TanstackQueryClientProvider/QueryClientProvider';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -22,7 +23,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={poppins.className}>
-                <Layout>{children}</Layout>
+                <TanstackQueryClientProvider>
+                    <Layout>{children}</Layout>
+                </TanstackQueryClientProvider>
             </body>
         </html>
     );

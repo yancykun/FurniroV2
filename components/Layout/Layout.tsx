@@ -1,7 +1,8 @@
-import { ReactNode, Suspense } from 'react';
+import { ReactNode } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SidebarOverlay from '../SidebarOverlay/SidebarOverlay';
+import CartSidebarComponent from '../CartSidebar/CartSidebarComponent';
 
 const Layout = ({ children }: { children: ReactNode }) => {
     return (
@@ -10,6 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             {children}
             <Footer />
             <SidebarOverlay />
+            <CartSidebarComponent />
         </>
     );
 };

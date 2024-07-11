@@ -96,32 +96,32 @@ export const help = [
     },
 ];
 
-// export const features = [
-//   {
-//     id: 0,
-//     icon: trophy,
-//     title: "High Quality",
-//     text: "crafted from top materials",
-//   },
-//   {
-//     id: 1,
-//     icon: guarantee,
-//     title: "Warranty Protection",
-//     text: "Over 2 years",
-//   },
-//   {
-//     id: 2,
-//     icon: shipping,
-//     title: "Free Shipping",
-//     text: "Order over 150 $",
-//   },
-//   {
-//     id: 3,
-//     icon: support,
-//     title: "24/7 Support",
-//     text: "Dedicated Support",
-//   },
-// ];
+export const features = [
+    {
+        id: 0,
+        icon: '/assets/svg/trophy.svg',
+        title: 'High Quality',
+        text: 'crafted from top materials',
+    },
+    {
+        id: 1,
+        icon: '/assets/svg/shield-check.svg',
+        title: 'Warranty Protection',
+        text: 'Over 2 years',
+    },
+    {
+        id: 2,
+        icon: '/assets/svg/handshake.svg',
+        title: 'Free Shipping',
+        text: 'Order over 150 $',
+    },
+    {
+        id: 3,
+        icon: '/assets/svg/headset.svg',
+        title: '24/7 Support',
+        text: 'Dedicated Support',
+    },
+];
 
 // export const contactDetails = [
 //   {

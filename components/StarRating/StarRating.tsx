@@ -12,11 +12,11 @@ const StarRating = ({ rating }: StarRatingProps) => {
     return (
         <div className="flex gap-1">
             {[...Array(fullStars)].map((_, i) => (
-                <Star key={i} className="text-yellow-500" />
+                <Star fill="#eab308" key={i} className="text-yellow-500" />
             ))}
             {halfStars === 1 && <StarHalf className="text-yellow-500" />}
             {[...Array(emptyStars)].map((_, i) => (
-                <Star key={i} className="text-yellow-500" />
+                <Star fill="#eab308" key={i} className="text-yellow-500" />
             ))}
         </div>
     );

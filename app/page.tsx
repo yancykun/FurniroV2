@@ -1,5 +1,6 @@
 import Category from '@/components/Category/Category';
 import Hero from '@/components/Hero/Hero';
+import Inspiration from '@/components/Inspiration/Inspiration';
 import Products from '@/components/Product/Products';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
             <Hero />
             <Category />
             <Products />
+            <Inspiration />
         </>
     );
 };

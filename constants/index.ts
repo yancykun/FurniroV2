@@ -59,24 +59,24 @@ export const categories = [
     },
 ];
 
-// export const inspiration = [
-//   {
-//     id: 0,
-//     image: inspiration1,
-//   },
-//   {
-//     id: 1,
-//     image: inspiration2,
-//   },
-//   {
-//     id: 2,
-//     image: inspiration3,
-//   },
-//   {
-//     id: 3,
-//     image: inspiration4,
-//   },
-// ];
+export const inspiration = [
+    {
+        id: 0,
+        image: '/assets/images/inspiration1.jpg',
+    },
+    {
+        id: 1,
+        image: '/assets/images/inspiration2.jpg',
+    },
+    {
+        id: 2,
+        image: '/assets/images/inspiration3.jpg',
+    },
+    {
+        id: 3,
+        image: '/assets/images/inspiration4.jpg',
+    },
+];
 
 export const help = [
     {
@@ -123,25 +123,25 @@ export const features = [
     },
 ];
 
-// export const contactDetails = [
-//   {
-//     id: 0,
-//     image: location,
-//     title: "Address",
-//     text: "236 5th SE Avenue, New York NY10000, United States",
-//   },
-//   {
-//     id: 1,
-//     image: phone,
-//     title: "Phone",
-//     mobile: "Mobile: +(84) 546-6789",
-//     hotline: "Hotline: +(84) 456-6789",
-//   },
-//   {
-//     id: 2,
-//     image: clock,
-//     title: "Working Time",
-//     weekdays: "Monday-Friday: 9:00 - 22:00",
-//     weekends: "Saturday-Sunday: 9:00 - 21:00",
-//   },
-// ];
+export const contactDetails = [
+    {
+        id: 0,
+        image: '/assets/svg/location.svg',
+        title: 'Address',
+        text: '236 5th SE Avenue, New York NY10000, United States',
+    },
+    {
+        id: 1,
+        image: '/assets/svg/phone.svg',
+        title: 'Phone',
+        mobile: 'Mobile: +(84) 546-6789',
+        hotline: 'Hotline: +(84) 456-6789',
+    },
+    {
+        id: 2,
+        image: '/assets/svg/clock.svg',
+        title: 'Working Time',
+        weekdays: 'Monday-Friday: 9:00 - 22:00',
+        weekends: 'Saturday-Sunday: 9:00 - 21:00',
+    },
+];

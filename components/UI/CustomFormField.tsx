@@ -90,7 +90,7 @@ const CustomFormField = (props: CustomProps) => {
             control={control}
             name={name}
             render={({ field }) => (
-                <FormItem className="flex-1">
+                <FormItem>
                     {fieldType !== FormFieldType.SELECT && label && (
                         <FormLabel className="font-medium text-base">
                             {label}

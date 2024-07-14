@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import SidebarOverlay from '../SidebarOverlay/SidebarOverlay';
 import CartSidebarComponent from '../CartSidebar/CartSidebarComponent';
 import { usePathname } from 'next/navigation';
+import ProfileSidebarComponents from '../Profile/ProfileSidebarComponent';
 
 const Layout = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
@@ -22,6 +23,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                     <Footer />
                     <SidebarOverlay />
                     <CartSidebarComponent />
+                    <ProfileSidebarComponents />
                 </>
             )}
         </>

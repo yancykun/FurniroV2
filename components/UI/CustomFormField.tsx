@@ -1,6 +1,6 @@
 'use client';
 
-import { FormFieldType } from '@/types/formFieldType';
+import { FormFieldType } from '@/types/';
 import Image from 'next/image';
 import { Control } from 'react-hook-form';
 import {
@@ -48,7 +48,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
                         <Input
                             placeholder={placeholder}
                             {...field}
-                            className={`rounded-lg border border-color-6 px-4 focus:border-2 focus:border-color-4 focus:outline-none ${className}`}
+                            className={`rounded-lg border border-color-6 px-4 focus:border-2 focus:border-color-4 focus-visible:ring-0 ${className}`}
                         />
                     </FormControl>
                 </div>
@@ -61,7 +61,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
                             type={showPassword ? 'text' : 'password'}
                             placeholder={placeholder}
                             {...field}
-                            className={`rounded-lg border border-color-6 px-4 focus:border-2 focus:border-color-4 focus:outline-none ${className}`}
+                            className={`rounded-lg border border-color-6 px-4 focus:border-2 focus:border-color-4 focus-visible:ring-0 ${className}`}
                         />
                     </FormControl>
                     <div
@@ -83,23 +83,23 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
 };
 
 const CustomFormField = (props: CustomProps) => {
-    const { control, fieldType, name, label, className } = props;
+    const { control, fieldType, name, label } = props;
 
     return (
         <FormField
             control={control}
             name={name}
             render={({ field }) => (
-                <FormItem className={`mb-12 flex-1 ${className}`}>
+                <FormItem className="flex-1">
                     {fieldType !== FormFieldType.SELECT && label && (
-                        <FormLabel className="font-medium text-base mb-3">
+                        <FormLabel className="font-medium text-base">
                             {label}
                         </FormLabel>
                     )}
 
                     <RenderField field={field} props={props} />
 
-                    <FormMessage className="mt-2 max-w-[350px] font-semibold text-red-800" />
+                    <FormMessage className="font-semibold text-red-800" />
                 </FormItem>
             )}
         />

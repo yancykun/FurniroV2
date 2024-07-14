@@ -1,8 +1,8 @@
-import SignupForm from '@/components/Forms/SignupForm';
+import SigninForm from '@/components/Forms/SignInForm';
 import Logo from '@/components/Header/Logo';
 import Image from 'next/image';
 
-const Signup = () => {
+const Signin = () => {
     return (
         <div className="h-screen max-h-screen flex">
             <section className="container my-auto">
@@ -11,14 +11,14 @@ const Signup = () => {
                         <Logo />
                     </div>
 
-                    <SignupForm />
+                    <SigninForm />
 
                     <p className="text-sm mt-10 font-medium">© 2024 Furino.</p>
                 </div>
             </section>
             <Image
                 className="side-img max-w-[50%]"
-                src="/assets/images/signupImage.jpg"
+                src="/assets/images/signinImage.jpg"
                 alt="furniture"
                 width={1000}
                 height={1000}
@@ -27,4 +27,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default Signin;

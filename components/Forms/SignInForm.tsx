@@ -5,13 +5,13 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import CustomFormField from '../UI/CustomFormField';
+import { FormFieldType } from '@/types/';
 import Link from 'next/link';
-import { registerUser } from '@/lib/actions/user.actions';
-import { FormFieldType } from '@/types';
 import SubmitButton from '../UI/SubmitButton';
-import { Alert, AlertDescription, AlertTitle } from '../UI/alert';
+import { signInUser } from '@/lib/actions/user.actions';
+import { useRouter } from 'next/navigation';
 
-const SignupForm = () => {
+const SigninForm = () => {
     const form = useForm<z.infer<typeof UserFormValidation>>({
         resolver: zodResolver(UserFormValidation),
         defaultValues: {
@@ -20,10 +20,11 @@ const SignupForm = () => {
         },
     });
 
+    const router = useRouter();
+
     const {
-        reset,
         setError,
-        formState: { isSubmitting, isSubmitSuccessful, errors },
+        formState: { isSubmitting, errors },
     } = form;
 
     const onSubmit = async ({
@@ -31,7 +32,7 @@ const SignupForm = () => {
         password,
     }: z.infer<typeof UserFormValidation>) => {
         try {
-            const response = await registerUser({ email, password });
+            const response = await signInUser({ email, password });
 
             if (!response.success) {
                 setError('root', {
@@ -39,10 +40,10 @@ const SignupForm = () => {
                     message: response.message,
                 });
             } else {
-                reset(); // Reset the form after successful submission
+                router.push('/');
             }
         } catch (error) {
-            console.error('Signup User Error: ', error);
+            console.error('Signin User Error: ', error);
             setError('root', {
                 type: 'manual',
                 message: 'An unexpected error occurred. Please try again.',
@@ -57,7 +58,7 @@ const SignupForm = () => {
                 className="flex-1 space-y-6"
             >
                 <h1 className="mb-4 text-lg text-center font-bold text-color-7 md:text-xl lg:text-2xl">
-                    Create an Account
+                    Welcome back
                 </h1>
 
                 <CustomFormField
@@ -77,23 +78,12 @@ const SignupForm = () => {
                     className="h-[50px] w-full"
                 />
 
-                {isSubmitSuccessful && (
-                    <Alert className="h-[70px] w-full bg-green-800">
-                        <AlertTitle className="text-color-1">
-                            Success!
-                        </AlertTitle>
-                        <AlertDescription className="text-color-1">
-                            Account created successfully.
-                        </AlertDescription>
-                    </Alert>
-                )}
-
                 <SubmitButton
                     isLoading={isSubmitting}
                     type="submit"
-                    className="h-[2.875rem] w-full rounded-md border font-medium sm:h-[3rem]"
+                    className="h-[2.875rem] w-full rounded-md border font-medium sm:h-[3rem] "
                 >
-                    Sign up
+                    Sign in
                 </SubmitButton>
 
                 {errors.root && (
@@ -102,13 +92,13 @@ const SignupForm = () => {
                     </div>
                 )}
 
-                <div className="mt-4 flex justify-end gap-4">
+                <div className="flex gap-4 justify-end mt-4">
                     <p className="text-base font-medium">
-                        Already have an account?
+                        Don`t have an account?
                     </p>
-                    <Link href="/signin">
+                    <Link href="/signup">
                         <p className="text-base font-semibold text-color-4">
-                            Sign in
+                            Sign up
                         </p>
                     </Link>
                 </div>
@@ -117,4 +107,4 @@ const SignupForm = () => {
     );
 };
 
-export default SignupForm;
+export default SigninForm;

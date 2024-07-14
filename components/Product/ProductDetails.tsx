@@ -1,8 +1,8 @@
 import { useCartStore } from '@/store/useCartStore';
 import Button from '../UI/Button';
 import StarRating from '../StarRating/StarRating';
-import { Product } from '@/types/productType';
 import { useSingleProductStore } from '@/store/useSingleProductStore';
+import { Product } from '@/types';
 
 type ProductDetailsProps = {
     product: Product;

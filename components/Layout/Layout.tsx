@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 
 const Layout = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
-    const isAuthPage = pathname === '/signup';
+    const isAuthPage = pathname === '/signup' || pathname === '/signin';
 
     return (
         <>

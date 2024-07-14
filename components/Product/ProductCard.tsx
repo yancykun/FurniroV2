@@ -1,4 +1,4 @@
-import { Product } from '@/types/productType';
+import { Product } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import StarRating from '../StarRating/StarRating';

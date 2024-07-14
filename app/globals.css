@@ -19,3 +19,28 @@
         @apply text-base font-semibold;
     }
 }
+
+@layer utilities {
+    /* ===== UTILITIES */
+
+    .container {
+        @apply relative flex-1 overflow-y-auto px-[5%];
+    }
+
+    .sub-container {
+        @apply mx-auto flex size-full flex-col py-10;
+    }
+
+    .side-img {
+        @apply hidden h-full object-cover md:block;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .animate-spin {
+        animation: spin 1s linear infinite;
+    }
+}

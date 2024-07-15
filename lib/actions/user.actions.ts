@@ -2,8 +2,9 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { UserParams } from '@/types/index';
-import { auth } from '@/lib/firebaseConfig';
+import { CheckoutParams, MessageParams, UserParams } from '@/types/index';
+import { auth, db } from '@/lib/firebaseConfig';
+import { addDoc, collection } from 'firebase/firestore';
 
 // CREATE USER
 export const registerUser = async (user: UserParams) => {
@@ -42,5 +43,42 @@ export const signInUser = async (user: UserParams) => {
         }
         console.error('Signin User Error:', error);
         return { success: false, message: errorMessage };
+    }
+};
+
+// SUBMIT MESSAGE
+export const submitMessage = async (message: MessageParams) => {
+    try {
+        await addDoc(collection(db, 'messages'), message);
+        return { success: true };
+    } catch (error) {
+        console.error('Message error: ', error);
+        return {
+            success: false,
+            message: 'An unexpected error occurred. Please try again.',
+        };
+    }
+};
+
+// CHECKOUT ITEMS
+export const submitBill = async (checkout: CheckoutParams) => {
+    try {
+        const user = auth.currentUser;
+
+        if (user) {
+            await addDoc(collection(db, 'users', user.uid, 'orders'), checkout);
+            return { succcess: true };
+        } else {
+            return {
+                success: false,
+                message: 'You must be logged in to submit your request.',
+            };
+        }
+    } catch (error) {
+        console.error('Error submitting bill:', error);
+        return {
+            return: false,
+            message: 'An unexpected error occurred. Please try again.',
+        };
     }
 };

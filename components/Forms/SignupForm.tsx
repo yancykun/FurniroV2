@@ -10,6 +10,7 @@ import { registerUser } from '@/lib/actions/user.actions';
 import { FormFieldType } from '@/types';
 import SubmitButton from '../UI/SubmitButton';
 import { Alert, AlertDescription, AlertTitle } from '../UI/alert';
+import { usePasswordVisibilityStore } from '@/store/usePasswordVisibilityStore';
 
 const SignupForm = () => {
     const form = useForm<z.infer<typeof UserFormValidation>>({
@@ -19,6 +20,7 @@ const SignupForm = () => {
             password: '',
         },
     });
+    const { resetPasswordVisibility } = usePasswordVisibilityStore();
 
     const {
         reset,
@@ -39,6 +41,7 @@ const SignupForm = () => {
                     message: response.message,
                 });
             } else {
+                resetPasswordVisibility(); //Reset password visibility state after successful submission
                 reset(); // Reset the form after successful submission
             }
         } catch (error) {

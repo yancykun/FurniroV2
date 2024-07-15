@@ -13,6 +13,10 @@ import {
 import { Input } from './input';
 import { Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
+import { Textarea } from './textarea';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+import { usePasswordVisibilityStore } from '@/store/usePasswordVisibilityStore';
 
 interface CustomProps {
     control: Control<any>;
@@ -29,7 +33,8 @@ interface CustomProps {
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
     const { fieldType, iconSrc, iconAlt, placeholder, className } = props;
-    const [showPassword, setShowPassword] = useState(false);
+    const { showPassword, togglePasswordVisibility } =
+        usePasswordVisibilityStore();
 
     switch (fieldType) {
         case FormFieldType.INPUT:
@@ -66,7 +71,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
                     </FormControl>
                     <div
                         className="absolute right-4 bottom-[18px] cursor-pointer"
-                        onClick={() => setShowPassword(!showPassword)}
+                        onClick={togglePasswordVisibility}
                     >
                         {showPassword ? (
                             <EyeOff size={18} />
@@ -75,6 +80,30 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
                         )}
                     </div>
                 </div>
+            );
+        case FormFieldType.TEXTAREA:
+            return (
+                <FormControl>
+                    <Textarea
+                        placeholder={placeholder}
+                        {...field}
+                        className={`rounded-lg border border-color-6 px-4 focus:border-2 focus:border-color-4 focus-visible:ring-0 ${className}`}
+                    />
+                </FormControl>
+            );
+        case FormFieldType.PHONE_INPUT:
+            return (
+                <FormControl>
+                    <PhoneInput
+                        defaultCountry="PH"
+                        placeholder={placeholder}
+                        international
+                        withCountryCallingCode
+                        value={field.value}
+                        onChange={field.onChange}
+                        className={`rounded-lg border border-color-6 px-4 focus:border-2 focus:border-color-4 focus-visible:ring-0 ${className}`}
+                    />
+                </FormControl>
             );
 
         default:

@@ -7,6 +7,7 @@ import Section from '../Layout/Section';
 import ProductSkeletonLoading from '../UI/ProductSkeletonLoading';
 import ProductDetailsLoading from '../UI/ProductDetailsLoading';
 import ProductDetails from './ProductDetails';
+import ProductNotFound from '../UI/ProductNotFound';
 
 const SingleProductCard = () => {
     const { productId } = useParams();
@@ -27,7 +28,7 @@ const SingleProductCard = () => {
     }
 
     if (!product) {
-        return <p>Product not found</p>;
+        return <ProductNotFound />;
     }
 
     return (

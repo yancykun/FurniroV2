@@ -12,7 +12,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     title: 'Furniro',
     description: 'Furniture ecommerce app',
-    icons: './assets/images/logo.png',
+    icons: '/assets/images/logo.png',
 };
 
 export default function RootLayout({

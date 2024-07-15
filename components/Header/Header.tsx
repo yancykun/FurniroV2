@@ -17,7 +17,7 @@ const Header = () => {
                 openNavigation ? 'bg-color-1' : 'bg-color-1/90 backdrop-blur-md'
             }`}
         >
-            <div className="flex items-center justify-between px-[1rem] py-[0.875rem] md:px-[4rem] md:py-[1.25rem]">
+            <div className="flex items-center justify-between px-[1rem] py-[1.25rem] md:px-[4rem] md:py-[1.25rem]">
                 <Logo />
                 <NavbarLinks />
 

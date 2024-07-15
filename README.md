@@ -19,11 +19,3 @@
 
 Furniro is an e-commerce website for furniture.
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
-
--   Next.js
--   Firebase
--   Typescript
--   TailwindCSS
--   ShadCN
--   Tanstack Query

@@ -1,7 +1,7 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/lEflo_sc82g?feature=shared" target="_blank">
-      <img src="https://github.com/adrianhajdin/healthcare/assets/151519281/a7dd73b6-93de-484d-84e0-e7f4e299167b" alt="Project Banner">
+    <a href="furnirov3.vercel.app" target="_blank">
+      <img src="https://github.com/yancykun/furnirov3/blob/main/app%20image.png?raw=true" alt="Project Banner">
     </a>
   <br />
 
@@ -13,11 +13,9 @@
     <img src="https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff" alt="shadcn ui" />
   </div>
 
-  <h3 align="center">Furniro</h3>
-
 </div>
 
-## <a name="introduction">🤖 Introduction</a>
+# Furniro
 
 Furniro is an e-commerce website for furniture.
 
